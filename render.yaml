@@ -1,0 +1,15 @@
+services:
+  # API Service
+  - type: web
+    name: newsletter-ai-agent
+    env: python
+    region: ohio  # 美东区域
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.7
+      - key: OPENAI_API_KEY
+        sync: false  # 这表示这是一个需要在Render控制台手动设置的秘密值
+    healthCheckPath: /
+    autoDeploy: true
