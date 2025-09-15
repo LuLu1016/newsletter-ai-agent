@@ -6,7 +6,8 @@ gunicorn>=21.2.0,<22.0.0
 # AI and Language Processing
 langchain>=0.0.335,<0.1.0
 openai>=1.6.1,<2.0.0
-langchain-openai>=0.0.2,<0.1.0
+# 移除 langchain-openai 因为它依赖 tiktoken
+# langchain-openai>=0.0.2,<0.1.0
 
 # HTTP and Parsing
 requests>=2.31.0,<3.0.0
@@ -22,3 +23,6 @@ python-dotenv>=1.0.0,<2.0.0
 aiohttp>=3.8.3,<4.0.0
 httpx>=0.23.0,<1.0.0
 anyio>=3.5.0,<4.0.0
+
+# Pre-built Wheels Only
+numpy>=1.24.0,<2.0.0  # 使用预编译的wheel
